@@ -41,7 +41,7 @@
 <script>
 
     const apiKey ="dabb130c272c4ebce7fbf9a7ce15650d";
-    const apiUrl="http://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
     const serachBox = document.querySelector(".search input");
     const searchBtn = document.querySelector(".search button");
@@ -51,7 +51,7 @@
         const response = await fetch(apiUrl +City+ `&appid=${apiKey}`);
         if(response.status==404){
             document.querySelector(".error").style.display="block";
-            document.querySelector(".weather").style.display=="none";
+            document.querySelector(".weather").style.display="none";
         }
         else{
              var data = await response.json();
@@ -73,7 +73,7 @@
 
     }
 
-    serachBtn = addEventListener("click",()=>{
+    serachBtn.addEventListener("click",()=>{
         checkWeather(serachBox.value);
     })
     
